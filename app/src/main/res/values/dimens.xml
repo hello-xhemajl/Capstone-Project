@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="centered_text_max_width">248dp</dimen>
+    <dimen name="browser_sneakers_image_height">288dp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="browser_item_margin_top">8dp</dimen>
 </resources>
