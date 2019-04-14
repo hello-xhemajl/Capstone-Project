@@ -5,10 +5,12 @@ import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
 
+import helo.mali.sneakerverse.sneakers.Sneakers;
+import helo.mali.sneakerverse.sneakers.SneakersDao;
 import helo.mali.sneakerverse.user.User;
 import helo.mali.sneakerverse.user.UserDao;
 
-@Database(entities = {User.class}, version = 1, exportSchema = false)
+@Database(entities = {Sneakers.class, User.class}, version = 1, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
 
     private static final Object LOCK = new Object();
@@ -27,5 +29,6 @@ public abstract class AppDatabase extends RoomDatabase {
         return sInstance;
     }
 
+     public abstract SneakersDao sneakersDao();
      public abstract UserDao userDao();
 }
