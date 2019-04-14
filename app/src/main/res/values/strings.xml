@@ -14,4 +14,6 @@
     <string name="signin_aircraft_background">An image of an airplane</string>
     <string name="button_retry">retry</string>
     <string name="signin_canceled_message">Signin canceled</string>
+    <string name="action_marked_favorite">Marked as favorite</string>
+    <string name="action_unmarked_favorite">Unmarked as favorite</string>
 </resources>

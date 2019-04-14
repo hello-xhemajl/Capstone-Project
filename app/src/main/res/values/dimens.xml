@@ -4,4 +4,6 @@
     <dimen name="browser_sneakers_image_height">288dp</dimen>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="browser_item_margin_top">8dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="browser_detail_desig_story_margin_top">8dp</dimen>
 </resources>

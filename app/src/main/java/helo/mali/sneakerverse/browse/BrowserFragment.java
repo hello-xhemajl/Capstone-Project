@@ -17,6 +17,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import helo.mali.sneakerverse.R;
+import helo.mali.sneakerverse.browse.detail.SneakersDetailFragment;
 import helo.mali.sneakerverse.sneakers.Sneakers;
 
 public class BrowserFragment extends Fragment implements
@@ -60,7 +61,9 @@ public class BrowserFragment extends Fragment implements
     @Override
     public void onSneakersClicked(int position) {
         Sneakers sneakers = this.sneakers.get(position);
-        Toast.makeText(getContext(), "item clieced " + position, Toast.LENGTH_SHORT)
-                .show();
+        browserVm.selectSneakers(sneakers);
+        getFragmentManager().beginTransaction()
+                .replace(R.id.fragment_container, new SneakersDetailFragment())
+                .commit();
     }
 }

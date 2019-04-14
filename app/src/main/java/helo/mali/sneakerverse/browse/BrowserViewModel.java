@@ -20,6 +20,7 @@ public class BrowserViewModel extends AndroidViewModel {
     public BrowserViewModel(@NonNull Application application) {
         super(application);
         sneakersRepository = new SneakersRepository(application);
+        selectedSneakers = new MutableLiveData<>();
     }
 
     public LiveData<List<Sneakers>> getSneakers(){
