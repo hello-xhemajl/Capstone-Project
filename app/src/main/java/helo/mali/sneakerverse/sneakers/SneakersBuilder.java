@@ -4,6 +4,8 @@ public class SneakersBuilder {
     private String imageUri;
     private String name;
     private String designStory;
+    private String imageContentDescription;
+    private Long sneakersId;
 
     private SneakersBuilder() {
     }
@@ -27,11 +29,23 @@ public class SneakersBuilder {
         return this;
     }
 
+    public SneakersBuilder withImageContentDescription(String imageContentDescription) {
+        this.imageContentDescription = imageContentDescription;
+        return this;
+    }
+
+    public SneakersBuilder withSneakersId(Long sneakersId) {
+        this.sneakersId = sneakersId;
+        return this;
+    }
+
     public Sneakers build() {
         Sneakers sneakers = new Sneakers();
         sneakers.setImageUri(imageUri);
         sneakers.setName(name);
         sneakers.setDesignStory(designStory);
+        sneakers.setImageContentDescription(imageContentDescription);
+        sneakers.setSneakersId(sneakersId);
         return sneakers;
     }
 }

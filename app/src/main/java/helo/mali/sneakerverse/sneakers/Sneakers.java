@@ -16,6 +16,9 @@ public class Sneakers {
     @ColumnInfo(name = "design_story")
     private String designStory;
 
+    @ColumnInfo(name = "image_content_description")
+    private String imageContentDescription;
+
     @PrimaryKey(autoGenerate = true)
     private Long sneakersId;
 
@@ -50,5 +53,13 @@ public class Sneakers {
 
     public void setDesignStory(String designStory) {
         this.designStory = designStory;
+    }
+
+    public String getImageContentDescription() {
+        return imageContentDescription;
+    }
+
+    public void setImageContentDescription(String imageContentDescription) {
+        this.imageContentDescription = imageContentDescription;
     }
 }
