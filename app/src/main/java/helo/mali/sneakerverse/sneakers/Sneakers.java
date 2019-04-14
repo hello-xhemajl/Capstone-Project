@@ -5,7 +5,7 @@ import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 
-@Entity
+@Entity(tableName = "sneakers")
 public class Sneakers {
     @ColumnInfo(name = "image_uri")
     private String imageUri;

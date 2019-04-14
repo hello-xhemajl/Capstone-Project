@@ -16,6 +16,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.squareup.picasso.Picasso;
 
 import butterknife.BindView;
@@ -43,6 +45,7 @@ public class SneakersDetailFragment extends Fragment {
     @BindView(R.id.toolbar)
     Toolbar toolbar;
 
+    private Sneakers sneakers;
 
     boolean hasMarkedAsFavorite;
 
@@ -61,7 +64,8 @@ public class SneakersDetailFragment extends Fragment {
         browserVm = ViewModelProviders.of(getActivity()).get(BrowserViewModel.class);
         browserVm.getSelectedSneakers().observe(this, new Observer<Sneakers>() {
             @Override
-            public void onChanged(@Nullable Sneakers sneakers) {
+            public void onChanged(@Nullable Sneakers lSneakers) {
+                sneakers = lSneakers;
                 notifySneakersChanged(sneakers);
             }
         });
@@ -75,10 +79,18 @@ public class SneakersDetailFragment extends Fragment {
     }
 
     public void onSneakersfavourite() {
+        hasMarkedAsFavorite = !hasMarkedAsFavorite;
 
+        // Get user of the app
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+        if(hasMarkedAsFavorite){
+            browserVm.favouriteSneakers(user.getUid(), sneakers.getSneakersId());
+        } else {
+            browserVm.unFavouriteSneakers(user.getUid(), sneakers.getSneakersId());
+        }
 
         // Change fab to indicate marked/unmarked as favorite
-        hasMarkedAsFavorite = !hasMarkedAsFavorite;
         favouriteButton.setImageResource(hasMarkedAsFavorite ?
                 R.drawable.ic_favorite_black_24dp :
                 R.drawable.ic_favorite_border_black_24dp);
