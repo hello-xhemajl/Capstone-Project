@@ -1,0 +1,44 @@
+{
+  "project_info": {
+    "project_number": "441741716366",
+    "firebase_url": "https://sneakerverse-c8fbf.firebaseio.com",
+    "project_id": "sneakerverse-c8fbf",
+    "storage_bucket": "sneakerverse-c8fbf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:441741716366:android:ea9929908adaf874",
+        "android_client_info": {
+          "package_name": "helo.mali.sneakerverse"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "441741716366-94fhp39tpsmu2src364ebj5vl90q05a0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "helo.mali.sneakerverse",
+            "certificate_hash": "013257c4b400eeb73742fae7709f225d69ca7109"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7KojrGONbrFzGy49-zmVj3v1I5m9L49E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "441741716366-25qf3rr65garh69cstdilh83905psp9i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

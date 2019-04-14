@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".signin.SigninActivity">
+
+    <LinearLayout
+        android:id="@+id/error_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <ImageView
+            android:id="@+id/error_image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/signin_aircraft_background"
+            app:srcCompat="@drawable/bg_aircraft"/>
+
+        <TextView
+            android:id="@+id/error_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:maxWidth="@dimen/centered_text_max_width"
+            android:text="@string/general_unknown_error"/>
+
+        <Button
+            android:id="@+id/retry_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/button_retry"
+            android:onClick="onRetry"/>
+    </LinearLayout>
+
+</LinearLayout>

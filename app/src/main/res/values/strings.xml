@@ -1,3 +1,17 @@
 <resources>
+    <string name="facebook_app_id" translatable="false">308945686463237</string>
+    <string name="fb_login_protocol_scheme" translatable="false">fb308945686463237</string>
+    <!-- Facebook application ID and custom URL scheme (app ID prefixed by 'fb'). -->
+    <string name="facebook_application_id" translatable="false">308945686463237</string>
+    <string name="facebook_login_protocol_scheme" translatable="false">fb308945686463237</string>
+
+    <string name="default_web_client_id" translatable="false">441741716366-25qf3rr65garh69cstdilh83905psp9i.apps.googleusercontent.com</string>
+
+
     <string name="app_name">Sneakerverse</string>
+    <string name="no_network_message">No network connection. Please check that you are connected</string>
+    <string name="general_unknown_error">Unexpected error</string>
+    <string name="signin_aircraft_background">An image of an airplane</string>
+    <string name="button_retry">retry</string>
+    <string name="signin_canceled_message">Signin canceled</string>
 </resources>

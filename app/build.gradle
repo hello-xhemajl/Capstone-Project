@@ -16,6 +16,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
@@ -35,8 +40,26 @@ dependencies {
     // WorkManager
     implementation "android.arch.work:work-runtime:1.0.0"
 
+    // Firebase
+    implementation 'com.google.firebase:firebase-core:16.0.8'
+    implementation 'com.google.firebase:firebase-auth:16.2.1'
+    implementation 'com.firebaseui:firebase-ui-auth:4.3.1'
+
+    // Facebook sdk
+    implementation 'com.facebook.android:facebook-android-sdk:4.42.0'
+
+    // View database in browser
+    debugImplementation 'com.amitshekhar.android:debug-db:1.0.6'
+
+    // For binding views
+    implementation 'com.jakewharton:butterknife:9.0.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:9.0.0'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+
 }
+
+apply plugin: 'com.google.gms.google-services'
