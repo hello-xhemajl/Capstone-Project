@@ -8,6 +8,7 @@ import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,6 +26,7 @@ import butterknife.ButterKnife;
 import helo.mali.sneakerverse.R;
 import helo.mali.sneakerverse.browse.BrowserViewModel;
 import helo.mali.sneakerverse.sneakers.Sneakers;
+import helo.mali.sneakerverse.usersneakers.UserWithSneakers;
 
 public class SneakersDetailFragment extends Fragment {
 
@@ -54,6 +56,7 @@ public class SneakersDetailFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View fragmentView = inflater.inflate(R.layout.fragment_sneakers_detail, container, false);
         ButterKnife.bind(this, fragmentView);
+        ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
         return fragmentView;
     }
 
@@ -109,5 +112,18 @@ public class SneakersDetailFragment extends Fragment {
         Picasso.get()
                 .load(sneakers.getImageUri())
                 .into(backdropImageView);
+
+        // Check if sneakers are marked as favorites and update fab button accordingly
+        browserVm.getUserWithSneakersIds(FirebaseAuth.getInstance().getCurrentUser().getUid()).observe(this,
+                new Observer<UserWithSneakers>() {
+                    @Override
+                    public void onChanged(@Nullable UserWithSneakers userWithSneakers) {
+                        boolean areFavorite = userWithSneakers.getFavoriteSneakersIds().contains(sneakers.getSneakersId());
+                        favouriteButton.setImageResource(areFavorite ?
+                                R.drawable.ic_favorite_black_24dp :
+                                R.drawable.ic_favorite_border_black_24dp);
+                    }
+                });
+
     }
 }

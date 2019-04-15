@@ -8,14 +8,17 @@ import android.support.annotation.NonNull;
 
 import java.util.List;
 
+import helo.mali.sneakerverse.usersneakers.UserSneakers;
 import helo.mali.sneakerverse.usersneakers.UserSneakersBuilder;
 import helo.mali.sneakerverse.usersneakers.UserSneakersRepository;
 import helo.mali.sneakerverse.sneakers.Sneakers;
 import helo.mali.sneakerverse.sneakers.SneakersRepository;
+import helo.mali.sneakerverse.usersneakers.UserWithSneakers;
 
 public class BrowserViewModel extends AndroidViewModel {
     private SneakersRepository sneakersRepository;
     private UserSneakersRepository userSneakersRepository;
+
 
     private LiveData<List<Sneakers>> sneakers;
     private MutableLiveData<Sneakers> selectedSneakers;
@@ -53,4 +56,15 @@ public class BrowserViewModel extends AndroidViewModel {
     public void unFavouriteSneakers(String userId, Long sneakersId) {
         userSneakersRepository.deleteByUserIdSneakersId(userId, sneakersId);
     }
+
+    private LiveData<UserWithSneakers> userWithSneakersIds;
+    public LiveData<UserWithSneakers> getUserWithSneakersIds(String userId){
+        if(userWithSneakersIds == null){
+            userWithSneakersIds = userSneakersRepository.getUserAndFavoriteSneakersIds(userId);
+        }
+
+        return userWithSneakersIds;
+    }
+
+
 }
