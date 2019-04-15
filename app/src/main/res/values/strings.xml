@@ -16,4 +16,6 @@
     <string name="signin_canceled_message">Signin canceled</string>
     <string name="action_marked_favorite">Marked as favorite</string>
     <string name="action_unmarked_favorite">Unmarked as favorite</string>
+    <string name="favorites_headline_text">Favorites</string>
+    <string name="favorites_fragment_title">Favorites</string>
 </resources>

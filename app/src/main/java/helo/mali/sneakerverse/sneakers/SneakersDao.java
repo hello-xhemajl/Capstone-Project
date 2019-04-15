@@ -15,4 +15,7 @@ public interface SneakersDao {
 
     @Query("SELECT * FROM sneakers")
     LiveData<List<Sneakers>> findAll();
+
+    @Query("SELECT * FROM sneakers WHERE sneakersId IN (:sneakersIds)")
+    LiveData<List<Sneakers>> findByIds(List<Long> sneakersIds);
 }

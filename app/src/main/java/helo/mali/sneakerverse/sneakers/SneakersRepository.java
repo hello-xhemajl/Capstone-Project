@@ -22,6 +22,10 @@ public class SneakersRepository {
         return sneakersDao.findAll();
     }
 
+    public LiveData<List<Sneakers>> getSneakersByIds(List<Long> sneakersIds){
+        return sneakersDao.findByIds(sneakersIds);
+    }
+
     public void save(Sneakers... sneakers){
         executor.execute(new Runnable() {
             @Override

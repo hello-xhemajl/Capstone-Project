@@ -22,6 +22,7 @@ import butterknife.ButterKnife;
 import helo.mali.sneakerverse.BuildConfig;
 import helo.mali.sneakerverse.MainActivity;
 import helo.mali.sneakerverse.R;
+import helo.mali.sneakerverse.favorites.FavoritesActivity;
 import helo.mali.sneakerverse.user.UserBuilder;
 
 /**
@@ -133,7 +134,7 @@ public class SigninActivity extends AppCompatActivity {
     }
 
     private void navigateToMainActivity() {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, FavoritesActivity.class);
         startActivity(intent);
     }
 
