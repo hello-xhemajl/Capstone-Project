@@ -1,4 +1,4 @@
-package helo.mali.sneakerverse.favourite;
+package helo.mali.sneakerverse.usersneakers;
 
 public class UserSneakersBuilder {
     private Long id;

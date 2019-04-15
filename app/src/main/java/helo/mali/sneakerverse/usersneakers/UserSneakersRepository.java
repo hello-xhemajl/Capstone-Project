@@ -1,7 +1,9 @@
-package helo.mali.sneakerverse.favourite;
+package helo.mali.sneakerverse.usersneakers;
 
+import android.arch.lifecycle.LiveData;
 import android.content.Context;
 
+import java.util.List;
 import java.util.concurrent.Executor;
 
 import helo.mali.sneakerverse.AppDatabase;
@@ -32,5 +34,9 @@ public class UserSneakersRepository {
                 userSneakersDao.deleteByUserIdSneakersId(userId, sneakersId);
             }
         });
+    }
+
+    public LiveData<UserWithSneakers> getUserAndFavoriteSneakersIds(String userId){
+        return userSneakersDao.findUserAndFavoriteSneakers(userId);
     }
 }

@@ -8,11 +8,10 @@ import android.support.annotation.NonNull;
 
 import java.util.List;
 
-import helo.mali.sneakerverse.favourite.UserSneakersBuilder;
-import helo.mali.sneakerverse.favourite.UserSneakersRepository;
+import helo.mali.sneakerverse.usersneakers.UserSneakersBuilder;
+import helo.mali.sneakerverse.usersneakers.UserSneakersRepository;
 import helo.mali.sneakerverse.sneakers.Sneakers;
 import helo.mali.sneakerverse.sneakers.SneakersRepository;
-import helo.mali.sneakerverse.user.User;
 
 public class BrowserViewModel extends AndroidViewModel {
     private SneakersRepository sneakersRepository;

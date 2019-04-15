@@ -5,8 +5,8 @@ import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
 
-import helo.mali.sneakerverse.favourite.UserSneakers;
-import helo.mali.sneakerverse.favourite.UserSneakersDao;
+import helo.mali.sneakerverse.usersneakers.UserSneakers;
+import helo.mali.sneakerverse.usersneakers.UserSneakersDao;
 import helo.mali.sneakerverse.sneakers.Sneakers;
 import helo.mali.sneakerverse.sneakers.SneakersDao;
 import helo.mali.sneakerverse.user.User;

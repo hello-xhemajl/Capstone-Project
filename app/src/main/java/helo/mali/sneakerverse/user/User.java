@@ -5,7 +5,7 @@ import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
 
-@Entity(tableName = "user")
+@Entity(tableName = "users")
 public class User {
     @NonNull
     @PrimaryKey
