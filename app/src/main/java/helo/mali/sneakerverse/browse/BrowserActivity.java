@@ -9,13 +9,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-import java.util.List;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import helo.mali.sneakerverse.BottomNavigationFragment;
 import helo.mali.sneakerverse.R;
-import helo.mali.sneakerverse.browse.BrowserFragment;
 import helo.mali.sneakerverse.browse.detail.SneakersDetailFragment;
 import helo.mali.sneakerverse.favorites.FavoritesActivity;
 import helo.mali.sneakerverse.sneakers.Sneakers;
@@ -57,8 +54,7 @@ public class BrowserActivity extends AppCompatActivity implements
                     });
         } else {
             getSupportFragmentManager().beginTransaction()
-                    .add(R.id.fragment_container, new BrowserFragment())
-                    .addToBackStack(null)
+                    .add(R.id.fragment_container, new BrowserFragment(), BrowserFragment.TAG)
                     .commit();
         }
 
@@ -89,12 +85,13 @@ public class BrowserActivity extends AppCompatActivity implements
     }
 
     private void maybeDisplayBottomNavigation(){
-        bottomNavigationContainer.setVisibility(getSupportFragmentManager().getBackStackEntryCount() > 1
+        bottomNavigationContainer.setVisibility(getSupportFragmentManager().getBackStackEntryCount() > 0
                 ? View.INVISIBLE: View.VISIBLE);
     }
 
     private void maybeFinish(){
-        if(getSupportFragmentManager().getBackStackEntryCount() == 0){
+        if(getSupportFragmentManager().getBackStackEntryCount() == 0
+            && getSupportFragmentManager().findFragmentByTag(BrowserFragment.TAG) == null){
             finish();
         };
     }

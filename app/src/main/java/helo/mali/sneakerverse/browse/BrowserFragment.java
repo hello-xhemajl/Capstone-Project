@@ -21,6 +21,7 @@ import helo.mali.sneakerverse.sneakers.Sneakers;
 
 public class BrowserFragment extends Fragment implements
         BrowserAdapter.SneakersVh.OnSneakersEventsListener {
+    public static final String TAG = BrowserFragment.class.getSimpleName();
 
     BrowserViewModel browserVm;
 
