@@ -7,9 +7,12 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import helo.mali.sneakerverse.BottomNavigationFragment;
 import helo.mali.sneakerverse.R;
 import helo.mali.sneakerverse.browse.BrowserFragment;
@@ -28,11 +31,15 @@ public class BrowserActivity extends AppCompatActivity implements
 
     BrowserViewModel browserVm;
 
+    @BindView(R.id.bottom_navigation_container)
+    View bottomNavigationContainer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         getSupportFragmentManager().addOnBackStackChangedListener(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_browser);
+        ButterKnife.bind(this);
 
         browserVm = ViewModelProviders.of(this).get(BrowserViewModel.class);
 
@@ -82,7 +89,8 @@ public class BrowserActivity extends AppCompatActivity implements
     }
 
     private void maybeDisplayBottomNavigation(){
-
+        bottomNavigationContainer.setVisibility(getSupportFragmentManager().getBackStackEntryCount() > 1
+                ? View.INVISIBLE: View.VISIBLE);
     }
 
     private void maybeFinish(){

@@ -41,7 +41,6 @@ public class FavoritesActivity extends AppCompatActivity implements
 
     @Override
     public void onBackStackChanged() {
-        maybeDisplayBottomNavigation();
         maybeFinish();
     }
 
@@ -49,10 +48,6 @@ public class FavoritesActivity extends AppCompatActivity implements
         getSupportFragmentManager().beginTransaction()
                 .add(R.id.bottom_navigation_container, BottomNavigationFragment.newInstance(LOCATION_FAVORITES))
                 .commit();
-    }
-
-    private void maybeDisplayBottomNavigation(){
-
     }
 
     private void maybeFinish(){
