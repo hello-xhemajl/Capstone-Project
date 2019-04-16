@@ -34,7 +34,10 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/favorites_recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingBottom="@dimen/bottom_navigation_view_height"
+        android:clipToPadding="false"
         app:layoutManager="android.support.v7.widget.GridLayoutManager"
         app:spanCount="3" />
 

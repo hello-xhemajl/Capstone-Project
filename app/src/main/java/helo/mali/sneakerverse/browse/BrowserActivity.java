@@ -2,6 +2,7 @@ package helo.mali.sneakerverse.browse;
 
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.Intent;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
@@ -13,14 +14,19 @@ import helo.mali.sneakerverse.BottomNavigationFragment;
 import helo.mali.sneakerverse.R;
 import helo.mali.sneakerverse.browse.BrowserFragment;
 import helo.mali.sneakerverse.browse.detail.SneakersDetailFragment;
+import helo.mali.sneakerverse.favorites.FavoritesActivity;
 import helo.mali.sneakerverse.sneakers.Sneakers;
 
-public class BrowserActivity extends AppCompatActivity implements FragmentManager.OnBackStackChangedListener {
+import static helo.mali.sneakerverse.BottomNavigationFragment.LOCATION_BROWSER;
+import static helo.mali.sneakerverse.BottomNavigationFragment.LOCATION_FAVORITES;
+
+public class BrowserActivity extends AppCompatActivity implements
+        FragmentManager.OnBackStackChangedListener,
+        BottomNavigationFragment.OnNavigateListener {
+
     public static final String EXTRA_SNEAKERS_ID = "extra_sneakers_id";
 
     BrowserViewModel browserVm;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +59,17 @@ public class BrowserActivity extends AppCompatActivity implements FragmentManage
     }
 
     @Override
+    public void onNavigate(int location) {
+        switch (location){
+            case LOCATION_FAVORITES:
+                navigateToFavorites();
+                break;
+            case LOCATION_BROWSER:
+                break;
+        }
+    }
+
+    @Override
     public void onBackStackChanged() {
         maybeDisplayBottomNavigation();
         maybeFinish();
@@ -60,7 +77,7 @@ public class BrowserActivity extends AppCompatActivity implements FragmentManage
 
     private void addBottomNavigation(){
         getSupportFragmentManager().beginTransaction()
-                .add(R.id.bottom_navigation_container, new BottomNavigationFragment())
+                .add(R.id.bottom_navigation_container, BottomNavigationFragment.newInstance(LOCATION_BROWSER))
                 .commit();
     }
 
@@ -79,6 +96,12 @@ public class BrowserActivity extends AppCompatActivity implements FragmentManage
                 .replace(R.id.fragment_container, new SneakersDetailFragment())
                 .addToBackStack(null)
                 .commit();
+    }
+
+    private void navigateToFavorites() {
+        Intent intent = new Intent(this, FavoritesActivity.class);
+        startActivity(intent);
+        finish();
     }
 
 
