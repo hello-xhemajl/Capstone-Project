@@ -10,7 +10,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import java.util.List;
 
@@ -31,12 +30,16 @@ public class BrowserFragment extends Fragment implements
 
     List<Sneakers> sneakers;
 
+    View view;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View fragmentView = inflater.inflate(R.layout.fragment_browser, container, false);
-        ButterKnife.bind(this, fragmentView);
-        return fragmentView;
+        if (view == null) {
+            view = inflater.inflate(R.layout.fragment_browser, container, false);
+            ButterKnife.bind(this, view);
+        }
+        return view;
     }
 
     @Override
@@ -57,13 +60,13 @@ public class BrowserFragment extends Fragment implements
         });
     }
 
-
     @Override
     public void onSneakersClicked(int position) {
         Sneakers sneakers = this.sneakers.get(position);
         browserVm.selectSneakers(sneakers);
         getFragmentManager().beginTransaction()
                 .replace(R.id.fragment_container, new SneakersDetailFragment())
+                .addToBackStack(null)
                 .commit();
     }
 }

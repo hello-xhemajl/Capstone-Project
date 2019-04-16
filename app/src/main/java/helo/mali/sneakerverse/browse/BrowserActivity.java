@@ -1,21 +1,20 @@
-package helo.mali.sneakerverse;
+package helo.mali.sneakerverse.browse;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import helo.mali.sneakerverse.R;
 import helo.mali.sneakerverse.browse.BrowserFragment;
 
-public class MainActivity extends AppCompatActivity {
-
-    private static final int RC_SIGN_IN = 123;
+public class BrowserActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_browser);
 
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.fragment_container, new BrowserFragment())
+                .add(R.id.fragment_container, new BrowserFragment())
                 .commit();
     }
 

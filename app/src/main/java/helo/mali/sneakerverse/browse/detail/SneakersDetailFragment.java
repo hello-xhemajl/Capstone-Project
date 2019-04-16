@@ -8,7 +8,6 @@ import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -56,7 +55,6 @@ public class SneakersDetailFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View fragmentView = inflater.inflate(R.layout.fragment_sneakers_detail, container, false);
         ButterKnife.bind(this, fragmentView);
-        ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
         return fragmentView;
     }
 
@@ -77,6 +75,13 @@ public class SneakersDetailFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 onSneakersfavourite();
+            }
+        });
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getFragmentManager().popBackStack();
             }
         });
     }
