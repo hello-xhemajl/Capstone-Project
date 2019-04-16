@@ -9,6 +9,7 @@ import android.os.Bundle;
 
 import java.util.List;
 
+import helo.mali.sneakerverse.BottomNavigationFragment;
 import helo.mali.sneakerverse.R;
 import helo.mali.sneakerverse.browse.BrowserFragment;
 import helo.mali.sneakerverse.browse.detail.SneakersDetailFragment;
@@ -47,12 +48,20 @@ public class BrowserActivity extends AppCompatActivity implements FragmentManage
                     .addToBackStack(null)
                     .commit();
         }
+
+        addBottomNavigation();
     }
 
     @Override
     public void onBackStackChanged() {
         maybeDisplayBottomNavigation();
         maybeFinish();
+    }
+
+    private void addBottomNavigation(){
+        getSupportFragmentManager().beginTransaction()
+                .add(R.id.bottom_navigation_container, new BottomNavigationFragment())
+                .commit();
     }
 
     private void maybeDisplayBottomNavigation(){

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/item_browse"
+        android:icon="@drawable/ic_collections_black_24dp"
+        android:title="@string/bottom_navigation_browse_title" />
+
+    <item
+        android:id="@+id/item_favorites"
+        android:icon="@drawable/ic_favorite_black_24dp"
+        android:title="@string/bottom_navigation_favorites_title" />
+</menu>

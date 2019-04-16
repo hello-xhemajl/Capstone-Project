@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/bottom_navigation_view_height"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/bottom_navigation_bg_color"
+    app:itemIconTint="@color/bg_bottom_navavigation_icon"
+    app:itemTextColor="@color/bg_bottom_navavigation_icon"
+    app:menu="@menu/bottom_navigation_menu"
+    android:id="@+id/bottom_navigation_view"/>

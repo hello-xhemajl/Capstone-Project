@@ -3,5 +3,9 @@
     <color name="colorPrimary">#F0514B</color>
     <color name="colorPrimaryLight">#FF8477</color>
     <color name="colorPrimaryDark">#C0403C</color>
+    <color name="colorAccentDark">#2bbd7e</color>
     <color name="colorAccent">#69f0ae</color>
+
+
+    <color name="bottom_navigation_bg_color">#CCffffff</color>
 </resources>

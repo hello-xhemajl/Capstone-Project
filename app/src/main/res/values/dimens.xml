@@ -6,4 +6,5 @@
     <dimen name="browser_item_margin_top">8dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="browser_detail_desig_story_margin_top">8dp</dimen>
+    <dimen name="bottom_navigation_view_height">56dp</dimen>
 </resources>

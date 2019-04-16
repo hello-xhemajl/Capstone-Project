@@ -18,4 +18,6 @@
     <string name="action_unmarked_favorite">Unmarked as favorite</string>
     <string name="favorites_headline_text">Favorites</string>
     <string name="favorites_fragment_title">Favorites</string>
+    <string name="bottom_navigation_favorites_title">Favorites</string>
+    <string name="bottom_navigation_browse_title">Browse</string>
 </resources>
