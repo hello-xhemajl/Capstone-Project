@@ -124,6 +124,9 @@ public class SneakersDetailFragment extends Fragment {
                     @Override
                     public void onChanged(@Nullable UserWithSneakers userWithSneakers) {
                         boolean areFavorite = userWithSneakers.getFavoriteSneakersIds().contains(sneakers.getSneakersId());
+
+                        hasMarkedAsFavorite = areFavorite;
+
                         favouriteButton.setImageResource(areFavorite ?
                                 R.drawable.ic_favorite_black_24dp :
                                 R.drawable.ic_favorite_border_black_24dp);
