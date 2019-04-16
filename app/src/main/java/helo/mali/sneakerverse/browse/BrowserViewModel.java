@@ -19,8 +19,8 @@ public class BrowserViewModel extends AndroidViewModel {
     private SneakersRepository sneakersRepository;
     private UserSneakersRepository userSneakersRepository;
 
-
     private LiveData<List<Sneakers>> sneakers;
+    private LiveData<Sneakers> sneakersById;
     private MutableLiveData<Sneakers> selectedSneakers;
 
     public BrowserViewModel(@NonNull Application application) {
@@ -44,6 +44,14 @@ public class BrowserViewModel extends AndroidViewModel {
 
     public void selectSneakers(Sneakers sneakers) {
         selectedSneakers.setValue(sneakers);
+    }
+
+    public LiveData<Sneakers> getSneakersById(Long sneakersId){
+        if(sneakersById == null) {
+            sneakersById = sneakersRepository.getSneakersById(sneakersId);
+        }
+
+        return sneakersById;
     }
 
     public void favouriteSneakers(String userId, Long sneakersId) {

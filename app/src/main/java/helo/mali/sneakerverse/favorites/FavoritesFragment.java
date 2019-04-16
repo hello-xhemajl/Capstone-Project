@@ -2,6 +2,7 @@ package helo.mali.sneakerverse.favorites;
 
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -21,6 +22,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import helo.mali.sneakerverse.R;
+import helo.mali.sneakerverse.browse.BrowserActivity;
 import helo.mali.sneakerverse.helper.CircleTransform;
 import helo.mali.sneakerverse.sneakers.Sneakers;
 import helo.mali.sneakerverse.user.User;
@@ -83,7 +85,11 @@ public class FavoritesFragment extends Fragment implements FavoritesAdapter.Snea
 
     @Override
     public void onSneakersClicked(int position) {
+        Sneakers sneakers = favoriteSneakers.get(position);
 
+        Intent intent = new Intent(getContext(), BrowserActivity.class);
+        intent.putExtra(BrowserActivity.EXTRA_SNEAKERS_ID, sneakers.getSneakersId());
+        startActivity(intent);
     }
 
     public void onBindUserView(){
