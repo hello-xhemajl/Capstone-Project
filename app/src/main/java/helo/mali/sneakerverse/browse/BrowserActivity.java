@@ -25,6 +25,7 @@ public class BrowserActivity extends AppCompatActivity implements
         BottomNavigationFragment.OnNavigateListener {
 
     public static final String EXTRA_SNEAKERS_ID = "extra_sneakers_id";
+    public static final String EXTRA_IS_FROM_WIDGET = "extra_is_from_widget";
 
     BrowserViewModel browserVm;
 
@@ -42,6 +43,12 @@ public class BrowserActivity extends AppCompatActivity implements
 
         // Has this all been started for displaying {@link SneakersDetailFragment}?
         if (getIntent().hasExtra(EXTRA_SNEAKERS_ID)) {
+
+            // If intent is from widget, up button should send user to {@link BrowserFragment}
+            if(getIntent().getBooleanExtra(EXTRA_IS_FROM_WIDGET, false)){
+                addBrowserFragment();
+            }
+
             browserVm.getSneakersById(getIntent().getLongExtra(EXTRA_SNEAKERS_ID, 0))
                     .observe(this, new Observer<Sneakers>() {
                         @Override
@@ -53,9 +60,8 @@ public class BrowserActivity extends AppCompatActivity implements
                         }
                     });
         } else {
-            getSupportFragmentManager().beginTransaction()
-                    .add(R.id.fragment_container, new BrowserFragment(), BrowserFragment.TAG)
-                    .commit();
+            // only add {@link BrowserFragment}
+            addBrowserFragment();
         }
 
         addBottomNavigation();
@@ -76,6 +82,12 @@ public class BrowserActivity extends AppCompatActivity implements
     public void onBackStackChanged() {
         maybeDisplayBottomNavigation();
         maybeFinish();
+    }
+
+    private void addBrowserFragment(){
+        getSupportFragmentManager().beginTransaction()
+                .add(R.id.fragment_container, new BrowserFragment(), BrowserFragment.TAG)
+                .commit();
     }
 
     private void addBottomNavigation(){

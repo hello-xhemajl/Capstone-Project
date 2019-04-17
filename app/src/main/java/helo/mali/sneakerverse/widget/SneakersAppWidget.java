@@ -31,6 +31,7 @@ public class SneakersAppWidget extends AppWidgetProvider {
         // starts {@link SneakersDetailFragment})
         Intent intent = new Intent(context, shouldDisplayEmptyView ? SigninActivity.class: BrowserActivity.class);
         intent.putExtra(BrowserActivity.EXTRA_SNEAKERS_ID, sneakersId);
+        intent.putExtra(BrowserActivity.EXTRA_IS_FROM_WIDGET, true);
         PendingIntent pendingIntent = PendingIntent.getActivity(
                 context, 0,
                 intent,
