@@ -20,4 +20,6 @@
     <string name="favorites_fragment_title">Favorites</string>
     <string name="bottom_navigation_favorites_title">Favorites</string>
     <string name="bottom_navigation_browse_title">Browse</string>
+    <string name="appwidget_empty_view_text">Your favorite sneakers will be displayed here. After you find them, of course.</string>
+    <string name="appwidget_body_text">\'%s\' now are your desired sneakers.</string>
 </resources>

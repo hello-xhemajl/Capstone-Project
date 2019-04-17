@@ -20,4 +20,7 @@ public interface UserSneakersDao {
     @Transaction
     @Query("SELECT * FROM users WHERE userId = :userId")
     LiveData<UserWithSneakers> findUserAndFavoriteSneakers(String userId);
+
+    @Query("SELECT * FROM user_sneakers WHERE userId = :userId ORDER BY id DESC LIMIT 1")
+    UserSneakers findLatestFavoriteSneakers(String userId);
 }

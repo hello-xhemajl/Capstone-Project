@@ -30,6 +30,10 @@ public class SneakersRepository {
         return sneakersDao.findById(sneakersId);
     }
 
+    public Sneakers getSneakersByIdNotLive(Long sneakersId){
+        return sneakersDao.findByIdNotLive(sneakersId);
+    }
+
     public void save(Sneakers... sneakers){
         executor.execute(new Runnable() {
             @Override

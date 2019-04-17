@@ -21,4 +21,7 @@ public interface SneakersDao {
 
     @Query("SELECT * FROM sneakers WHERE sneakersId = :sneakersId")
     LiveData<Sneakers> findById(Long sneakersId);
+
+    @Query("SELECT * FROM sneakers WHERE sneakersId = :sneakersId")
+    Sneakers findByIdNotLive(Long sneakersId);
 }

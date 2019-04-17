@@ -39,4 +39,8 @@ public class UserSneakersRepository {
     public LiveData<UserWithSneakers> getUserAndFavoriteSneakersIds(String userId){
         return userSneakersDao.findUserAndFavoriteSneakers(userId);
     }
+
+    public UserSneakers getLatestFavoriteSneakers(String userId){
+        return userSneakersDao.findLatestFavoriteSneakers(userId);
+    }
 }

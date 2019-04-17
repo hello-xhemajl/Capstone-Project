@@ -26,6 +26,7 @@ import helo.mali.sneakerverse.R;
 import helo.mali.sneakerverse.browse.BrowserViewModel;
 import helo.mali.sneakerverse.sneakers.Sneakers;
 import helo.mali.sneakerverse.usersneakers.UserWithSneakers;
+import helo.mali.sneakerverse.widget.SneakersWidgetUpdaterService;
 
 public class SneakersDetailFragment extends Fragment {
 
@@ -94,8 +95,10 @@ public class SneakersDetailFragment extends Fragment {
 
         if(hasMarkedAsFavorite){
             browserVm.favouriteSneakers(user.getUid(), sneakers.getSneakersId());
+            SneakersWidgetUpdaterService.startActionUpdateWidget(getContext());
         } else {
             browserVm.unFavouriteSneakers(user.getUid(), sneakers.getSneakersId());
+            SneakersWidgetUpdaterService.startActionUpdateWidget(getContext());
         }
 
         // Change fab to indicate marked/unmarked as favorite
