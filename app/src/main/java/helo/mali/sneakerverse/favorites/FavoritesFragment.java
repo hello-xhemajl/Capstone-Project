@@ -24,6 +24,7 @@ import butterknife.ButterKnife;
 import helo.mali.sneakerverse.R;
 import helo.mali.sneakerverse.browse.BrowserActivity;
 import helo.mali.sneakerverse.helper.CircleTransform;
+import helo.mali.sneakerverse.helper.RVEmptyObserver;
 import helo.mali.sneakerverse.sneakers.Sneakers;
 import helo.mali.sneakerverse.user.User;
 import helo.mali.sneakerverse.usersneakers.UserWithSneakers;
@@ -46,6 +47,9 @@ public class FavoritesFragment extends Fragment implements FavoritesAdapter.Snea
     @BindView(R.id.name_text_view)
     TextView nameTextView;
 
+    @BindView(R.id.empty_view)
+    View emptyView;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -62,6 +66,9 @@ public class FavoritesFragment extends Fragment implements FavoritesAdapter.Snea
 
         favoritesAdapter = new FavoritesAdapter(this);
         favoritesRecyclerView.setAdapter(favoritesAdapter);
+
+        // Check if empty view should be displayed
+        favoritesAdapter.registerAdapterDataObserver(new RVEmptyObserver(favoritesRecyclerView, emptyView));
 
         favoritesVm.getUserWithSneakersIds(FirebaseAuth.getInstance().getCurrentUser().getUid())
                 .observe(this, new Observer<UserWithSneakers>() {

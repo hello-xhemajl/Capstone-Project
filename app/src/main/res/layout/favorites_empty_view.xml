@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/empty_view"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1"
+    tools:showIn="@layout/fragment_favorites"
+    android:visibility="gone"
+    tools:visibility="visible">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:orientation="horizontal">
+
+        <helo.mali.sneakerverse.helper.SquareImageView
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginRight="4dp"
+            android:importantForAccessibility="no"
+            android:background="@drawable/sneakers_item_placeholder" />
+
+        <helo.mali.sneakerverse.helper.SquareImageView
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginRight="4dp"
+            android:importantForAccessibility="no"
+            android:background="@drawable/sneakers_item_placeholder" />
+
+        <helo.mali.sneakerverse.helper.SquareImageView
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:importantForAccessibility="no"
+            android:background="@drawable/sneakers_item_placeholder" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/favorites_empty_view_text" />
+
+</FrameLayout>

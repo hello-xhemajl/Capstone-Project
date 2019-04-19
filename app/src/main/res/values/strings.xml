@@ -20,6 +20,11 @@
     <string name="bottom_navigation_favorites_title">Favorites</string>
     <string name="bottom_navigation_browse_title">Browse</string>
     <string name="appwidget_empty_view_text">Your favorite sneakers will be displayed here. After you find them, of course.</string>
-    <string name="appwidget_body_text">\'%s\' now are your desired sneakers. See them again?</string>
+    <string name="appwidget_body_text">\'%s\' now are your desired sneakers. Check them again?</string>
+    <string name="action_mark_favorite">Mark as favorite</string>
+    <string name="action_unmark_favorite">Unmark as favorite</string>
+    <string name="action_navigate_up">navigate up</string>
+    <string name="favorites_avatar_content_description">your avatar image</string>
+    <string name="favorites_empty_view_text">Your favorite sneakers will be displayed here</string>
 
 </resources>

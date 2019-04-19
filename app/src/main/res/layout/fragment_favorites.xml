@@ -41,4 +41,7 @@
         app:layoutManager="android.support.v7.widget.GridLayoutManager"
         app:spanCount="3" />
 
+
+    <include layout="@layout/favorites_empty_view" />
+
 </LinearLayout>

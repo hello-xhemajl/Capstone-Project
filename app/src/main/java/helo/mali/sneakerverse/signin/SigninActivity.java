@@ -140,5 +140,8 @@ public class SigninActivity extends AppCompatActivity {
 
     private void showErrorView(boolean shouldShowErrorView){
         errorView.setVisibility(shouldShowErrorView ? View.VISIBLE: View.GONE);
+        if(shouldShowErrorView) {
+            errorTextView.requestFocus();
+        }
     }
 }

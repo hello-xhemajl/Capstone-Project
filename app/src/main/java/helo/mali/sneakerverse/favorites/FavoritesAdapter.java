@@ -40,6 +40,7 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.Snea
         vh.sneakersImageView.setContentDescription(sneakers.getImageContentDescription());
         Picasso.get()
                 .load(sneakers.getImageUri())
+                .placeholder(R.drawable.sneakers_item_placeholder)
                 .into(vh.sneakersImageView);
     }
 

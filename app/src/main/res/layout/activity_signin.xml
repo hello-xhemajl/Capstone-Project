@@ -21,6 +21,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@string/signin_aircraft_background"
+            android:importantForAccessibility="no"
             app:srcCompat="@drawable/bg_aircraft"/>
 
         <TextView

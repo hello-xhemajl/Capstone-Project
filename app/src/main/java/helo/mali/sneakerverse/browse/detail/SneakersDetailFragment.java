@@ -115,6 +115,11 @@ public class SneakersDetailFragment extends Fragment {
                         R.string.action_unmarked_favorite,
                 Toast.LENGTH_SHORT)
                 .show();
+
+        // Refresh content description of the fab button because its purpose is negated
+        favouriteButton.setContentDescription(hasMarkedAsFavorite
+                ? getString(R.string.action_unmark_favorite)
+                : getString(R.string.action_mark_favorite));
     }
 
     public void maybeDisplayAds(View view){
@@ -125,6 +130,7 @@ public class SneakersDetailFragment extends Fragment {
     public void notifySneakersChanged(Sneakers sneakers) {
         collapsingToolbarLayout.setTitle(sneakers.getName());
         designStoryTextView.setText(sneakers.getDesignStory());
+        backdropImageView.setContentDescription(sneakers.getImageContentDescription());
         Picasso.get()
                 .load(sneakers.getImageUri())
                 .into(backdropImageView);
@@ -141,6 +147,11 @@ public class SneakersDetailFragment extends Fragment {
                         favouriteButton.setImageResource(areFavorite ?
                                 R.drawable.ic_favorite_black_24dp :
                                 R.drawable.ic_favorite_border_black_24dp);
+
+                        // Set content description to communicate fab's purpose
+                        favouriteButton.setContentDescription(areFavorite
+                                ? getString(R.string.action_unmark_favorite)
+                                : getString(R.string.action_mark_favorite));
                     }
                 });
 

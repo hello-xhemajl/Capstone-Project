@@ -36,7 +36,6 @@ public class SneakersAppWidget extends AppWidgetProvider {
                 context, 0,
                 intent,
                 PendingIntent.FLAG_UPDATE_CURRENT);
-
         views.setOnClickPendingIntent(R.id.appwidget_view, pendingIntent);
 
         // Instruct the widget manager to update the widget
