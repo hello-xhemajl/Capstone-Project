@@ -8,19 +8,60 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:441741716366:android:ea9929908adaf874",
+        "mobilesdk_app_id": "1:441741716366:android:ae4a4f858fb8e2b2",
         "android_client_info": {
-          "package_name": "helo.mali.sneakerverse"
+          "package_name": "helo.mali.sneakerverse.free"
         }
       },
       "oauth_client": [
         {
-          "client_id": "441741716366-94fhp39tpsmu2src364ebj5vl90q05a0.apps.googleusercontent.com",
+          "client_id": "441741716366-4rtrn2led0dfb5okm79avt8h4bjijtfs.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "helo.mali.sneakerverse",
+            "package_name": "helo.mali.sneakerverse.free",
             "certificate_hash": "013257c4b400eeb73742fae7709f225d69ca7109"
           }
+        },
+        {
+          "client_id": "441741716366-25qf3rr65garh69cstdilh83905psp9i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7KojrGONbrFzGy49-zmVj3v1I5m9L49E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "441741716366-25qf3rr65garh69cstdilh83905psp9i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:441741716366:android:a2d68b8b0e6e81b4",
+        "android_client_info": {
+          "package_name": "helo.mali.sneakerverse.paid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "441741716366-jqo76nlhuiddq6cuavti7ke4a7rnoe99.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "helo.mali.sneakerverse.paid",
+            "certificate_hash": "013257c4b400eeb73742fae7709f225d69ca7109"
+          }
+        },
+        {
+          "client_id": "441741716366-25qf3rr65garh69cstdilh83905psp9i.apps.googleusercontent.com",
+          "client_type": 3
         }
       ],
       "api_key": [
