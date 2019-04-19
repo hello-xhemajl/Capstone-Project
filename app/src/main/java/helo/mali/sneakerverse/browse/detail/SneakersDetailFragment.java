@@ -22,6 +22,7 @@ import com.squareup.picasso.Picasso;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import helo.mali.sneakerverse.AdConfigurer;
 import helo.mali.sneakerverse.R;
 import helo.mali.sneakerverse.browse.BrowserViewModel;
 import helo.mali.sneakerverse.sneakers.Sneakers;
@@ -62,6 +63,8 @@ public class SneakersDetailFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        maybeDisplayAds(view);
 
         browserVm = ViewModelProviders.of(getActivity()).get(BrowserViewModel.class);
         browserVm.getSelectedSneakers().observe(this, new Observer<Sneakers>() {
@@ -112,6 +115,11 @@ public class SneakersDetailFragment extends Fragment {
                         R.string.action_unmarked_favorite,
                 Toast.LENGTH_SHORT)
                 .show();
+    }
+
+    public void maybeDisplayAds(View view){
+        AdConfigurer adConfigurer = new AdConfigurer();
+        adConfigurer.configureAds(view);
     }
 
     public void notifySneakersChanged(Sneakers sneakers) {

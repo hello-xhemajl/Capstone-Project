@@ -5,8 +5,7 @@
     <string name="facebook_application_id" translatable="false">308945686463237</string>
     <string name="facebook_login_protocol_scheme" translatable="false">fb308945686463237</string>
 
-    <string name="default_web_client_id" translatable="false">441741716366-25qf3rr65garh69cstdilh83905psp9i.apps.googleusercontent.com</string>
-
+    <string name="banner_ad_unit_id" translatable="false">ca-app-pub-3940256099942544/6300978111</string>
 
     <string name="app_name">Sneakerverse</string>
     <string name="no_network_message">No network connection. Please check that you are connected</string>
@@ -21,5 +20,6 @@
     <string name="bottom_navigation_favorites_title">Favorites</string>
     <string name="bottom_navigation_browse_title">Browse</string>
     <string name="appwidget_empty_view_text">Your favorite sneakers will be displayed here. After you find them, of course.</string>
-    <string name="appwidget_body_text">\'%s\' now are your desired sneakers.</string>
+    <string name="appwidget_body_text">\'%s\' now are your desired sneakers. See them again?</string>
+
 </resources>
