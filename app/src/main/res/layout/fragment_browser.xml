@@ -26,8 +26,9 @@
         android:layout_height="match_parent"
         android:paddingBottom="@dimen/bottom_navigation_view_height"
         android:clipToPadding="false"
-        tools:context=".browse.BrowserFragment"
+        android:descendantFocusability="afterDescendants"
         app:layoutManager="android.support.v7.widget.LinearLayoutManager"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context=".browse.BrowserFragment"
         android:id="@+id/browser_recycler_view"/>
 </android.support.design.widget.CoordinatorLayout>

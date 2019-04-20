@@ -5,6 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:foreground="?selectableItemBackground"
     app:cardElevation="0dp"
+    android:focusable="true"
     android:id="@+id/item_view">
 
     <helo.mali.sneakerverse.helper.SquareImageView

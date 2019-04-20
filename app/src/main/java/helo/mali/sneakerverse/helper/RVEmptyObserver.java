@@ -21,5 +21,15 @@ public class RVEmptyObserver extends RecyclerView.AdapterDataObserver {
         }
     }
 
-    public void onItemRangeRemoved(int positionStart, int itemCount) { checkIfEmpty(); }
+    @Override
+    public void onChanged() {
+        super.onChanged();
+        checkIfEmpty();
+    }
+
+    @Override
+    public void onItemRangeRemoved(int positionStart, int itemCount) {
+        super.onItemRangeRemoved(positionStart, itemCount);
+        checkIfEmpty();
+    }
 }

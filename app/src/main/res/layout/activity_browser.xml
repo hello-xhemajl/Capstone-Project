@@ -9,11 +9,13 @@
     <FrameLayout
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:nextFocusForward="@id/bottom_navigation_container" />
 
     <FrameLayout
         android:id="@+id/bottom_navigation_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:nextFocusForward="@id/fragment_container"
         android:layout_gravity="bottom"/>
 </FrameLayout>

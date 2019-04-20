@@ -32,6 +32,10 @@
                     android:id="@+id/backdrop"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:nextFocusForward="@id/scroll_view"
+                    android:nextFocusDown="@id/scroll_view"
+                    android:nextFocusUp="@id/toolbar"
+                    android:focusable="true"
                     android:fitsSystemWindows="true"
                     android:scaleType="centerCrop" />
 
@@ -45,6 +49,9 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
+                android:nextFocusForward="@id/backdrop"
+                android:nextFocusDown="@id/backdrop"
+                android:focusable="true"
                 app:navigationIcon="?attr/homeAsUpIndicator"
                 app:navigationContentDescription="@string/action_navigate_up"
                 app:layout_collapseMode="pin"
@@ -57,6 +64,9 @@
         android:id="@+id/scroll_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:nextFocusForward="@id/favourite_fab"
+        android:nextFocusDown="@id/favourite_fab"
+        android:nextFocusUp="@id/backdrop"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <LinearLayout
@@ -89,7 +99,10 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
-        android:src="@drawable/ic_favorite_border_black_24dp"
+        android:nextFocusForward="@id/toolbar"
+        android:nextFocusDown="@id/toolbar"
+        android:nextFocusUp="@id/scroll_view"
+        app:srcCompat="@drawable/ic_favorite_border_black_24dp"
         android:tint="@android:color/white"
         app:layout_anchor="@id/scroll_view"
         app:layout_anchorGravity="bottom|right|end"/>
