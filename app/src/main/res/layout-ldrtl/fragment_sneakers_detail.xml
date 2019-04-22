@@ -25,6 +25,8 @@
             app:expandedTitleMarginStart="48dp"
             app:expandedTitleTextAppearance="@style/TextAppearance.Design.CollapsingToolbar.Expanded"
             app:collapsedTitleTextAppearance="@style/Widget.Design.CollapsingToolbar"
+            app:collapsedTitleGravity="right"
+            app:expandedTitleGravity="bottom|right"
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
             <FrameLayout
@@ -80,6 +82,7 @@
                 android:id="@+id/design_story_text_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="right"
                 android:layout_marginTop="@dimen/browser_detail_desig_story_margin_top"
                 android:layout_marginStart="@dimen/activity_horizontal_margin"
                 android:layout_marginEnd="@dimen/activity_horizontal_margin"/>
