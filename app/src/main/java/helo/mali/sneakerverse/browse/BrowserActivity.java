@@ -5,6 +5,7 @@ import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -111,6 +112,7 @@ public class BrowserActivity extends AppCompatActivity implements
     private void navigateToSneakersDetails() {
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fragment_container, new SneakersDetailFragment())
+                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                 .addToBackStack(null)
                 .commit();
     }
@@ -118,6 +120,9 @@ public class BrowserActivity extends AppCompatActivity implements
     private void navigateToFavorites() {
         Intent intent = new Intent(this, FavoritesActivity.class);
         startActivity(intent);
+        // Disable default opening transition because it not suited when both activities
+        // have a bottom navigation view
+        overridePendingTransition(0, 0);
         finish();
     }
 

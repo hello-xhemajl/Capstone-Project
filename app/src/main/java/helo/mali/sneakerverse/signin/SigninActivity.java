@@ -1,7 +1,9 @@
 package helo.mali.sneakerverse.signin;
 
+import android.app.ActivityOptions;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -94,7 +96,7 @@ public class SigninActivity extends AppCompatActivity {
         }
     }
 
-    public void onSuccessfulSignin(){
+    public void onSuccessfulSignin() {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         signinVm.saveUser(UserBuilder.anUser()
                 .withAvatarUri(user.getPhotoUrl() != null ? user.getPhotoUrl().toString() : null)
@@ -105,13 +107,13 @@ public class SigninActivity extends AppCompatActivity {
         navigateToMainActivity();
     }
 
-    public void onFailedSignin(IdpResponse response){
+    public void onFailedSignin(IdpResponse response) {
         // Sign in failed. If response is null the user canceled the
         // sign-in flow using the back button. Otherwise check
         // response.getError().getErrorCode() and handle the error.
         showErrorView(true);
 
-        if(response == null){
+        if (response == null) {
             errorTextView.setText(R.string.signin_canceled_message);
         }
 
@@ -134,13 +136,17 @@ public class SigninActivity extends AppCompatActivity {
 
     private void navigateToMainActivity() {
         Intent intent = new Intent(this, BrowserActivity.class);
-        startActivity(intent);
+
+        startActivity(intent, Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP ?
+                ActivityOptions.makeSceneTransitionAnimation(this).toBundle()
+                : null);
+
         finish();
     }
 
-    private void showErrorView(boolean shouldShowErrorView){
-        errorView.setVisibility(shouldShowErrorView ? View.VISIBLE: View.GONE);
-        if(shouldShowErrorView) {
+    private void showErrorView(boolean shouldShowErrorView) {
+        errorView.setVisibility(shouldShowErrorView ? View.VISIBLE : View.GONE);
+        if (shouldShowErrorView) {
             errorTextView.requestFocus();
         }
     }

@@ -59,6 +59,9 @@ public class FavoritesActivity extends AppCompatActivity implements
     private void navigateToBrowser(){
         Intent intent = new Intent(this, BrowserActivity.class);
         startActivity(intent);
+        // Disable default opening transition because it not suited when both activities
+        // have a bottom navigation view
+        overridePendingTransition(0, 0);
         finish();
     }
 }
