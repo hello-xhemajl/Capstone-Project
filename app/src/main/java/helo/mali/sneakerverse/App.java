@@ -3,6 +3,7 @@ package helo.mali.sneakerverse;
 import android.app.Application;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
+import android.support.multidex.MultiDexApplication;
 
 import java.util.concurrent.TimeUnit;
 
@@ -11,7 +12,7 @@ import androidx.work.NetworkType;
 import androidx.work.PeriodicWorkRequest;
 import androidx.work.WorkManager;
 
-public class App extends Application {
+public class App extends MultiDexApplication {
     @Override
     public void onCreate() {
         super.onCreate();
