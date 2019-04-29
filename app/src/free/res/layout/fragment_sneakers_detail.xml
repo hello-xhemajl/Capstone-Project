@@ -52,7 +52,7 @@
                 android:nextFocusForward="@id/backdrop"
                 android:nextFocusDown="@id/backdrop"
                 android:focusable="true"
-                app:navigationIcon="?attr/homeAsUpIndicator"
+                app:navigationIcon="@drawable/ic_arrow_back_white"
                 app:navigationContentDescription="@string/action_navigate_up"
                 app:layout_collapseMode="pin"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
